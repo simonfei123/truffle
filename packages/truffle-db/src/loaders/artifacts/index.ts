@@ -438,6 +438,7 @@ export class ArtifactsLoader {
   }
 
   async loadCompilation(compilationConfig: object) {
+    console.debug("everything ok here? %o", compilationConfig);
     const compilationOutput = await Contracts.compile(compilationConfig);
     const contracts = await this.organizeContractsByCompiler(compilationOutput);
     const compilationObjects = await Promise.all(Object.values(contracts)
